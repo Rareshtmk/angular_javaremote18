@@ -11,6 +11,9 @@ import { AddEditItemComponent } from './add-edit-item/add-edit-item.component';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpConfigInterceptor } from './utils/http-config-interceptor';
+
 
 @NgModule({
   declarations: [
@@ -27,8 +30,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
