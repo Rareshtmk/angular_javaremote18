@@ -1,0 +1,7 @@
+<p>list-items works!</p>
+<p *ngIf="itemsList.length==0">no items in list</p>
+<div *ngFor="let item of itemsList" class="item-border" (click)="onSelectItem(item)">
+    <p>title: {{item.title}}</p>
+    <p>description: {{item.description}}</p>
+    <p>price: {{item.price}} lei</p>
+</div>

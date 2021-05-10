@@ -1,0 +1,11 @@
+<div class="div-container">
+
+    <img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" />
+
+    <form [formGroup]="loginForm" class="form-container">
+        <input class="input-item" type="email" placeholder="email" formControlName="email">
+        <input class="input-item" type="password" placeholder="password" formControlName="password">
+
+        <button [disabled]="!loginForm.valid" (click)="onLogin()">Login</button>
+    </form>
+</div>

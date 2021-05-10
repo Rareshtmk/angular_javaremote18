@@ -1,0 +1,8 @@
+<form [formGroup]="formData">
+    <input type="text" placeholder="Title" formControlName="title">
+    <input type="text" placeholder="Description" formControlName="description">
+    <input type="number" placeholder="Price" formControlName="price">
+    <button [disabled]="!formData.valid" (click)="onSubmit()">Submit</button>
+    <button [disabled]="selectedItem==null"(click)="onDelete()">Delete</button>
+</form>
+

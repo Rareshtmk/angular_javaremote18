@@ -1,0 +1,8 @@
+<p>dashboard works!</p>
+<!-- cu ajutorul lui addEvent primim evenimentul din componenta -->
+<!-- $event reprezinta continutul trimis prin metoda .emit din componenta app-edit-item -->
+<app-add-edit-item [selectedItem]="selectedItem" (addEvent)="onReceiveItem($event)" (editEvent)="onEditItem($event)" (deleteEvent)="onDeleteItem($event)"></app-add-edit-item>
+<!-- itemsList este atribut pentru componenta listItems, 
+a devenit atribut pentru ca in fata variabilei itemsList
+din componenta am adaugat @Input() -->
+<app-list-items [itemsList]="items" (selectItemEvent)="onSelectedItemFromList($event)"></app-list-items>

@@ -1,0 +1,14 @@
+<div class="div-container">
+
+    <img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" />
+
+    <form [formGroup]="registerForm" class="form-container">
+        <input class="input-item" type="text" placeholder="First name" formControlName="firstName">
+        <input class="input-item" type="text" placeholder="Last name" formControlName="lastName">
+        <input class="input-item" type="email" placeholder="email" formControlName="email">
+        <input class="input-item" type="password" placeholder="password" formControlName="password">
+        <input class="input-item" type="password" placeholder="password" formControlName="retypePassword">
+
+        <button [disabled]="!registerForm.valid" (click)="onRegister()">Register</button>
+    </form>
+</div>

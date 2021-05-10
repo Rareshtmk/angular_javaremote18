@@ -1,0 +1,13 @@
+<div [ngSwitch]="authType">
+
+    <div *ngSwitchCase="'login'">
+        <app-login></app-login>
+        <p class="lbl-auth-type" (click)="onAuthType('register')">create new account?</p>
+    </div>
+
+    <div *ngSwitchCase="'register'">
+        <app-register></app-register>
+        <p class="lbl-auth-type" (click)="onAuthType('login')">back to login</p>
+    </div>
+
+</div>
