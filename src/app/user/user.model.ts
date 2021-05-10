@@ -10,4 +10,5 @@ export interface UserModel {
     accountNonLocked: boolean;
     accountNonExpired: boolean;
     credentialsNonExpired: boolean;
+    token: string;
 }
