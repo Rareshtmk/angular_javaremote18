@@ -12,4 +12,12 @@ export class AuthService {
   public login(data: any){
     return this.httpClient.post("http://localhost:8080/auth/login-token", data);
   }
+
+  public register(data: any){
+    return this.httpClient.post("http://localhost:8080/auth/register", data);
+  }
+
+  public forgotPassword(data: any){
+    return this.httpClient.post("http://localhost:8080/auth/forgot-password", data);
+  }
 }

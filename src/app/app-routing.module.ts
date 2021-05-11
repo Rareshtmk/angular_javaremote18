@@ -8,10 +8,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   {
     path: '',
-    component: DashboardComponent,
+    redirectTo: "/auth",
+    pathMatch: "full",
+   
   },
   {
-    path: "auth", component: AuthComponent,
+    path: "auth", component: AuthComponent, 
+  },
+  {
+    path: "dashboard", component: DashboardComponent,
   },
   {
     path: "show-myname", component: MynameComponent,

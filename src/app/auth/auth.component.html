@@ -2,12 +2,18 @@
 
     <div *ngSwitchCase="'login'">
         <app-login></app-login>
-        <p class="lbl-auth-type" (click)="onAuthType('register')">create new account?</p>
+        <p class="lbl-auth-type" (click)="onAuthType('register')">Create new account?</p>
+        <p class="lbl-auth-type" (click)="onAuthType('forgot-password')">Forgot password?</p>
     </div>
 
     <div *ngSwitchCase="'register'">
         <app-register></app-register>
-        <p class="lbl-auth-type" (click)="onAuthType('login')">back to login</p>
+        <p class="lbl-auth-type" (click)="onAuthType('login')">Back to login</p>
+    </div>
+
+    <div *ngSwitchCase="'forgot-password'">
+        <app-forgot-password></app-forgot-password>
+        <p class="lbl-auth-type" (click)="onAuthType('login')">Back to login</p>
     </div>
 
 </div>
