@@ -24,7 +24,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   onForgotPassword (): void {
     console.log(this.forgotPasswordForm.value);
-    this.authService.login(this.forgotPasswordForm.value).subscribe((response: any) => {
+    this.authService.forgotPassword(this.forgotPasswordForm.value).subscribe((response: any) => {
       console.log(response);
 
       if(response.status == 200) {
