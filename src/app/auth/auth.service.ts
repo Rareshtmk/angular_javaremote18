@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   public login(data: any){
-    return this.httpClient.post("http://localhost:8080/auth/login-token", data);
+    return this.httpClient.post("http://localhost:8080/auth/login", data);
   }
 
   public register(data: any){
