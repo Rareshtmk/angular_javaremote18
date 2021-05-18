@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-add-edit-item',
@@ -21,7 +22,7 @@ export class AddEditItemComponent implements OnInit, OnChanges {
   formData: FormGroup;
   contor: number = 0;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService) {
     this.addEvent = new EventEmitter();
     this.editEvent = new EventEmitter();
     this.deleteEvent = new EventEmitter();
@@ -33,6 +34,7 @@ export class AddEditItemComponent implements OnInit, OnChanges {
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),
       ],
+      ownerId: [this.userService.getUser()?.id]
     });
   }
 
@@ -51,6 +53,7 @@ export class AddEditItemComponent implements OnInit, OnChanges {
           this.selectedItem.price,
           Validators.compose([Validators.min(1), Validators.max(10000)]),
         ],
+        ownerId: [this.userService.getUser()?.id]
       });
     } else {
       this.setupForm();
@@ -66,6 +69,7 @@ export class AddEditItemComponent implements OnInit, OnChanges {
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),
       ],
+      ownerId: [this.userService.getUser()?.id]
     });
   }
 
