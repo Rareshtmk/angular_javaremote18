@@ -16,6 +16,7 @@ private user: UserModel | undefined;
   public getUser(): UserModel | undefined {
     return this.user;
   }
+  
 
   public getToken(): string | undefined {
     if(this.user){
