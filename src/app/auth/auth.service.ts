@@ -21,5 +21,3 @@ export class AuthService {
     return this.httpClient.post("http://localhost:8080/auth/forgot-password", data);
   }
 }
-
-asdasdasdasdasdasdasd

@@ -1,0 +1,55 @@
+-Auth
+-Menu
+    -Home 
+    -Categories
+    -Orders
+    -My Account
+    -Admin(Admins Only)
+-HomePage
+    -Lista categorii
+    -Lista de produse
+-Category pages / Dupa selectarea categoriei din Home pe aceasta pagina se vor lista toate elementele din acea categorie cu posibilitatea de filtrare dupa subcategorii
+    -Cats
+        -Food
+        -Toys
+        -Accesories
+    -Dogs
+        -Food
+        -Toys
+        -Accesories
+    -Fish
+        -Food
+        -Toys
+        -Accesories
+    -Birds
+        -Food
+        -Toys
+        -Accesories
+-Product details 
+    -Images
+    -Title
+    -Description
+    -Price
+    -Category
+    -Subcategory
+    -UserId(Administrator)
+    -Date
+-Order
+    -User details
+    -Product
+    -Quantity
+    -Price
+    -Date
+-My Account
+    -First Name
+    -Last Name
+    -Address
+    -Phone Number
+    -Email
+    -Profile picture(optional)
+    -Change Password
+    -Order List
+-Admin Page
+    -User Management(CRUD Users)
+    -Products Management(CRUD Products)
+    -CRUD for Categories and Subcategories

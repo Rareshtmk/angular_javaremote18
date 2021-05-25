@@ -5,24 +5,43 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
-import { LifecycleComponent } from './lifecycle/lifecycle.component';
-import { MynameComponent } from './myname/myname.component';
 import { AddEditItemComponent } from './add-edit-item/add-edit-item.component';
 import { ListItemsComponent } from './list-items/list-items.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpConfigInterceptor } from './utils/http-config-interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './home/home.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { OrderComponent } from './order/order.component';
+import { MyAccountComponent } from './my-account/my-account.component';
+import { AddEditUserComponent } from './dashboard/add-edit-user/add-edit-user.component';
+import { AddEditProductsComponent } from './dashboard/add-edit-products/add-edit-products.component';
+import { AddEditCategoriesComponent } from './dashboard/add-edit-categories/add-edit-categories.component';
+import { CategoryPreviewComponent } from './categories/category-preview/category-preview.component';
+import { ProductPreviewComponent } from './products/product-preview/product-preview.component';
+import { UserPriviewComponent } from './component/user-priview/user-priview.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LifecycleComponent,
-    MynameComponent,
     AddEditItemComponent,
     ListItemsComponent,
     DashboardComponent,
+    HomeComponent,
+    CategoriesComponent,
+    ProductDetailsComponent,
+    OrderComponent,
+    MyAccountComponent,
+    AddEditUserComponent,
+    AddEditProductsComponent,
+    AddEditCategoriesComponent,
+    CategoryPreviewComponent,
+    ProductPreviewComponent,
+    UserPriviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +50,7 @@ import { HttpConfigInterceptor } from './utils/http-config-interceptor';
     ReactiveFormsModule,
     AuthModule,
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true
