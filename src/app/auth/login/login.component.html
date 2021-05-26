@@ -3,9 +3,15 @@
     <img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" />
 
     <form [formGroup]="loginForm" class="form-container">
-        <input class="input-item" type="email" placeholder="email" formControlName="email">
-        <input class="input-item" type="password" placeholder="password" formControlName="password">
+        <mat-form-field appearance="standard">
+            <mat-label>Email</mat-label>
+            <input placeholder="Email@email.com" matInput type="email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field appearance="standard">
+            <mat-label>Password</mat-label>
+            <input placeholder="Password" matInput type="password" formControlName="password">
+          </mat-form-field>
+          <button [disabled]="!loginForm.valid" (click)="onLogin()" mat-raised-button color="primary">Login</button>
 
-        <button [disabled]="!loginForm.valid" (click)="onLogin()">Login</button>
     </form>
 </div>

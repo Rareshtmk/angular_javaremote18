@@ -3,12 +3,28 @@
     <img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" />
 
     <form [formGroup]="registerForm" class="form-container">
-        <input class="input-item" type="text" placeholder="First name" formControlName="firstName">
-        <input class="input-item" type="text" placeholder="Last name" formControlName="lastName">
-        <input class="input-item" type="email" placeholder="email" formControlName="email">
-        <input class="input-item" type="password" placeholder="password" formControlName="password">
-        <input class="input-item" type="password" placeholder="password" formControlName="retypePassword">
+        <mat-form-field>
+            <mat-label>First name</mat-label>
+            <input placeholder="First name" matInput type="text" formControlName="firstName">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Last name</mat-label>
+            <input placeholder="Last name" matInput type="text" formControlName="lastName">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input placeholder="Email" matInput type="email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input placeholder="Password" matInput type="password" formControlName="password">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Retype Password</mat-label>
+            <input placeholder="Password" matInput type="password" formControlName="retypePassword">
+          </mat-form-field>
 
-        <button [disabled]="!registerForm.valid" (click)="onRegister()">Register</button>
+
+        <button [disabled]="!registerForm.valid" (click)="onRegister()" mat-raised-button color="primary">Register</button>   
     </form>
 </div>

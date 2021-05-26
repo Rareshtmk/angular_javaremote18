@@ -23,6 +23,9 @@ import { AddEditCategoriesComponent } from './dashboard/add-edit-categories/add-
 import { CategoryPreviewComponent } from './categories/category-preview/category-preview.component';
 import { ProductPreviewComponent } from './products/product-preview/product-preview.component';
 import { UserPriviewComponent } from './component/user-priview/user-priview.component';
+import {MatFormFieldModule, MatLabel, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -51,10 +54,14 @@ import { UserPriviewComponent } from './component/user-priview/user-priview.comp
     AuthModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true
-  }],
+  },{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
