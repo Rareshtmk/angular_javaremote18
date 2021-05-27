@@ -5,6 +5,7 @@
     -Orders
     -My Account
     -Admin(Admins Only)
+    -Logout
 -HomePage
     -Lista categorii
     -Lista de produse

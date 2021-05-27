@@ -1,3 +1,24 @@
-.item-border {
-    border: 1px solid red;
+.card-format {
+    margin: 16px;
+    width: 100%;
+}
+
+.title-item {
+    font-size: large;
+    color: tomato;
+    text-transform: capitalize;
+}
+
+.description-item {
+    font-size: medium;
+    text-transform: capitalize;
+}
+
+.price-item {
+    text-align: right;
+    font-size: x-large;
+}
+
+.item {
+    display: block;
 }

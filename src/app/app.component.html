@@ -1,12 +1,23 @@
-<!-- <h1 *ngIf="showTitle">bun venit, {{title}}</h1>
-<button (click)="onShowChange()">Click Me</button>
-
-<div>
-    <p>Limbaje de programare</p>
-    <div *ngIf="showTitle">
-        <p *ngFor="let lang of languages; let i=index;">{{lang}} {{i}}</p>
-    </div>
-
-</div> -->
-
-<div class="mat-app-background" style="height:100%;"><router-outlet></router-outlet></div>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+        (closed)="events.push('close!')">
+        <div class="div-logo-menu"><img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" /></div>
+        <mat-nav-list>
+            <mat-list-item *ngFor="let option of menuOptions" (click)="showInfo(option)">
+                    <mat-icon mat-list-icon>{{option.icon}}</mat-icon>
+                <a matLine>{{ option.title }}</a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" *ngIf="userService.isUserLoged()">
+            <mat-toolbar-row>
+                <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="sidenav.toggle()">menu</mat-icon>
+                <span>Custom Toolbar</span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="mat-app-background" style="height:100%;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

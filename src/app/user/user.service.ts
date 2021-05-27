@@ -24,4 +24,12 @@ private user: UserModel | undefined;
     }
     return undefined;
   }
+
+  public isUserLoged(): boolean {
+    return this.user != undefined;
+  }
+
+  public logOut(): void {
+    this.user = undefined;
+  }
 }

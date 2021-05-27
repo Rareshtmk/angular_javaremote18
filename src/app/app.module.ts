@@ -26,6 +26,18 @@ import { UserPriviewComponent } from './component/user-priview/user-priview.comp
 import {MatFormFieldModule, MatLabel, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIcon, MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
+
+
+
+
 
 
 @NgModule({
@@ -57,11 +69,17 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatCardModule,
+    MatGridListModule,
     
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: HttpConfigInterceptor, multi: true
-  },{provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {floatLabel: 'always'}}],
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
