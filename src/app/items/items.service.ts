@@ -21,7 +21,7 @@ export class ItemsService {
   }
 
   public deleteItemForever(itemId: number){
-    return this.httpClient.delete("http://localhost:8080/items/delete/"+itemId);
+    return this.httpClient.delete("http://localhost:8080/items/"+itemId);
   }
 
   public getAllItems(){

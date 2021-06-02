@@ -5,3 +5,7 @@
 a devenit atribut pentru ca in fata variabilei itemsList
 din componenta am adaugat @Input() -->
 <app-list-items [itemsList]="items" (selectItemEvent)="onSelectedItemFromList($event)"></app-list-items>
+
+<app-add-edit-categories [selectedCategory]="selectedCategory" (addEvent)="onReceiveCategory($event)" (editEvent)="onEditCategory($event)" (deleteEvent)="onDeleteCategory($event)"></app-add-edit-categories>
+
+<app-list-categories [categoriesList]="categories" (selectCategoryEvent)="onSelectedCategoryFromList($event)"></app-list-categories>

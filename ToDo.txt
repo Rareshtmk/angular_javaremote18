@@ -1,14 +1,14 @@
--Auth
+-Auth  --> OK
 -Menu
-    -Home 
-    -Categories
-    -Orders
-    -My Account
-    -Admin(Admins Only)
-    -Logout
+    -Home  --> OK 
+    -Categories  --> OK
+    -Orders  --> OK
+    -My Account  --> OK
+    -Admin(Admins Only)  --> 
+    -Logout  --> OK
 -HomePage
-    -Lista categorii
-    -Lista de produse
+    -Lista categorii  --> 
+    -Lista de produse  --> 
 -Category pages / Dupa selectarea categoriei din Home pe aceasta pagina se vor lista toate elementele din acea categorie cu posibilitatea de filtrare dupa subcategorii
     -Cats
         -Food
@@ -28,13 +28,13 @@
         -Accesories
 -Product details 
     -Images
-    -Title
-    -Description
-    -Price
+    -Title  --> OK
+    -Description  --> OK
+    -Price  --> OK
     -Category
     -Subcategory
-    -UserId(Administrator)
-    -Date
+    -UserId(Administrator)  --> OK
+    -Date  --> OK
 -Order
     -User details
     -Product

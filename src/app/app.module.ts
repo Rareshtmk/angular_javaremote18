@@ -32,7 +32,7 @@ import {MatIcon, MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import { ListCategoriesComponent } from './categories/list-categories/list-categories.component';
 
 
 
@@ -57,6 +57,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CategoryPreviewComponent,
     ProductPreviewComponent,
     UserPriviewComponent,
+    ListCategoriesComponent,
   ],
   imports: [
     BrowserModule,
