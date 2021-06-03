@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { timeStamp } from 'node:console';
 import { subscribeOn } from 'rxjs/operators';
 import { CategoriesService } from '../categories/categories.service';
 import { ItemsService } from '../items/items.service';

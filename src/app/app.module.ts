@@ -33,6 +33,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ListCategoriesComponent } from './categories/list-categories/list-categories.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -76,6 +77,7 @@ import { ListCategoriesComponent } from './categories/list-categories/list-categ
     MatListModule,
     MatCardModule,
     MatGridListModule,
+    MatSelectModule,
     
   ],
   providers: [{

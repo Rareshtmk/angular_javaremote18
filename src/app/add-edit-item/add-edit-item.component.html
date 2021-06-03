@@ -10,7 +10,15 @@
             <mat-label>Description</mat-label>
             <input placeholder="Description" matInput type="text" formControlName="description">
           </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Select</mat-label>
+            <mat-select formControlName="categoryId">
+              <mat-option *ngFor= "let category of categoryList" [value]="category.id">{{category.title}}</mat-option>
+            
+            </mat-select>
+          </mat-form-field>
           <mat-form-field appearance="standard">
+      
             <mat-label>Price</mat-label>
             <input placeholder="Price" matInput type="number" formControlName="price">
           </mat-form-field>

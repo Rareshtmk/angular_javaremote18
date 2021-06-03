@@ -9,6 +9,7 @@ export class ItemsService {
   constructor(private httpClient: HttpClient) {   }
 
   public createItem(item: any){
+    console.log(item);
     return this.httpClient.post("http://localhost:8080/items/create", item);
   }
 

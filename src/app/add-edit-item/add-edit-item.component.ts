@@ -16,6 +16,7 @@ import { UserService } from '../user/user.service';
 })
 export class AddEditItemComponent implements OnInit, OnChanges {
   @Input() selectedItem: any;
+  @Input() categoryList: Array<any> = [];
   @Output('editEvent') editEvent: EventEmitter<any>;
   @Output('addEvent') addEvent: EventEmitter<any>;
   @Output('deleteEvent') deleteEvent: EventEmitter<any>;
@@ -34,7 +35,8 @@ export class AddEditItemComponent implements OnInit, OnChanges {
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),
       ],
-      ownerId: [this.userService.getUser()?.id]
+      ownerId: [this.userService.getUser()?.id],
+      categoryId: [null],
     });
   }
 
@@ -53,7 +55,8 @@ export class AddEditItemComponent implements OnInit, OnChanges {
           this.selectedItem.price,
           Validators.compose([Validators.min(1), Validators.max(10000)]),
         ],
-        ownerId: [this.userService.getUser()?.id]
+        ownerId: [this.userService.getUser()?.id],
+        categoryId: [this.selectedItem.category.id],
       });
     } else {
       this.setupForm();
@@ -69,7 +72,8 @@ export class AddEditItemComponent implements OnInit, OnChanges {
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),
       ],
-      ownerId: [this.userService.getUser()?.id]
+      ownerId: [this.userService.getUser()?.id],
+      categoryId: [null],
     });
   }
 
