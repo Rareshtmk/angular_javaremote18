@@ -21,7 +21,7 @@
             <mat-form-field appearance="fill">
                 <mat-label>Select Sub Category</mat-label>
                 <mat-select formControlName="subCategoryId">
-                    <mat-option *ngFor="let category of categoryList" [value]="category.id">{{category.title}}
+                    <mat-option *ngFor="let subCategory of subCategoryList" [value]="subCategory.id">{{subCategory.title}}
                     </mat-option>
 
                 </mat-select>

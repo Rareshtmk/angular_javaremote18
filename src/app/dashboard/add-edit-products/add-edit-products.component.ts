@@ -16,6 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AddEditProductsComponent implements OnInit {
   @Input() selectedItem: any;
   @Input() categoryList: Array<any> = [];
+  @Input() subCategoryList: Array<any> = [];
   @Output('editEvent') editEvent: EventEmitter<any>;
   @Output('addEvent') addEvent: EventEmitter<any>;
   @Output('deleteEvent') deleteEvent: EventEmitter<any>;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from './user/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class AppComponent implements OnInit {
   opened: boolean = false;
   menuOptions: Array <any> = [];
 
-  constructor(public userService: UserService) {
+  constructor(public userService: UserService, public router: Router) {
     
   }
 
@@ -39,24 +40,37 @@ export class AppComponent implements OnInit {
         id: "4",
         icon: "account_circle",
         title: "My Account",
-        route: "/home",
+        route: "/my-account",
       },
       {
         id: "5",
         icon: "admin_panel_settings",
         title: "Admin",
-        route: "/home",
+        route: "/dashboard",
       },
       {
         id: "6",
         icon: "logout",
         title: "Logout",
-        route: "/home",
+        route: "",
       }
     ]
   }
 
-  public showInfo(option: any): void {
+  public showInfo(option: any, sidenav: any): void {
+    sidenav.toggle();
     console.log(option);
+    switch(option.id){
+      case "1":
+      case "2":
+      case "3":
+      case "4":
+      case "5":
+      this.router.navigateByUrl(option.route);
+      break;
+      case "6":
+      this.userService.logOut();
+      break;    
+    }
   }
 }

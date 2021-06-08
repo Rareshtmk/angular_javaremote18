@@ -2,7 +2,7 @@
     <div>
         <!-- cu ajutorul lui addEvent primim evenimentul din componenta -->
         <!-- $event reprezinta continutul trimis prin metoda .emit din componenta app-edit-item -->
-        <app-add-edit-products [selectedItem]="selectedItem" [categoryList]="categories"
+        <app-add-edit-products [selectedItem]="selectedItem" [categoryList]="categories" [subCategoryList]="subcategories"
             (addEvent)="onReceiveItem($event)" (editEvent)="onEditItem($event)" (deleteEvent)="onDeleteItem($event)">
         </app-add-edit-products>
         <!-- itemsList este atribut pentru componenta listItems, 

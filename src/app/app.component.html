@@ -3,7 +3,7 @@
         (closed)="events.push('close!')">
         <div class="div-logo-menu"><img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" /></div>
         <mat-nav-list>
-            <mat-list-item *ngFor="let option of menuOptions" (click)="showInfo(option)">
+            <mat-list-item *ngFor="let option of menuOptions" (click)="showInfo(option, sidenav)">
                     <mat-icon mat-list-icon>{{option.icon}}</mat-icon>
                 <a matLine>{{ option.title }}</a>
             </mat-list-item>

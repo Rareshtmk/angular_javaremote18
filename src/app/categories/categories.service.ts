@@ -38,33 +38,33 @@ export class CategoriesService {
   }
 
   // subcategories
-  public createSubCategory(category: any) {
+  public createSubCategory(subCategory: any) {
     return this.httpClient.post(
-      'http://localhost:8080/categories/create',
-      category
+      'http://localhost:8080/sub-categories/create',
+      subCategory
     );
   }
 
-  public updateSubCategory(categoryId: number, category: any) {
+  public updateSubCategory(subCategoryId: number, subCategory: any) {
     return this.httpClient.put(
-      'http://localhost:8080/categories/' + categoryId,
-      category
+      'http://localhost:8080/sub-categories/' + subCategoryId,
+      subCategory
     );
   }
 
-  public deleteSubCategory(categoryId: number) {
+  public deleteSubCategory(subCategoryId: number) {
     return this.httpClient.delete(
-      'http://localhost:8080/categories/' + categoryId
+      'http://localhost:8080/sub-categories/' + subCategoryId
     );
   }
 
-  public deleteSubCategoryForever(categoryId: number) {
+  public deleteSubCategoryForever(subCategoryId: number) {
     return this.httpClient.delete(
-      'http://localhost:8080/categories/' + categoryId
+      'http://localhost:8080/sub-categories/' + subCategoryId
     );
   }
 
   public getAllSubCategories() {
-    return this.httpClient.get('http://localhost:8080/categories');
+    return this.httpClient.get('http://localhost:8080/sub-categories');
   }
 }

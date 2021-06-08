@@ -1,5 +1,7 @@
-import { ThrowStmt } from '@angular/compiler';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { UserModel } from './user.model';
 
 @Injectable({
@@ -7,7 +9,7 @@ import { UserModel } from './user.model';
 })
 export class UserService {
 private user: UserModel | undefined;
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   public setUser(user: UserModel): void {
     this.user = user;
@@ -31,5 +33,10 @@ private user: UserModel | undefined;
 
   public logOut(): void {
     this.user = undefined;
+    this.router.navigate(['/', 'auth'])
+  }
+
+  public updateUser(user: any): Observable<any> {
+    return this.http.put("http://localhost:8080/users/update", user);
   }
 }

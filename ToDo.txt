@@ -1,5 +1,5 @@
 -Auth  --> OK
--Menu
+-Menu  --> OK
     -Home  --> OK 
     -Categories  --> OK
     -Orders  --> OK
@@ -31,8 +31,8 @@
     -Title  --> OK
     -Description  --> OK
     -Price  --> OK
-    -Category
-    -Subcategory
+    -Category --> OK
+    -Subcategory --> OK
     -UserId(Administrator)  --> OK
     -Date  --> OK
 -Order
@@ -54,3 +54,7 @@
     -User Management(CRUD Users)
     -Products Management(CRUD Products)
     -CRUD for Categories and Subcategories
+
+ToDo Java Spring:
+    -Create, read User
+    -security token

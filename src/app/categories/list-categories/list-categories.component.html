@@ -1,9 +1,5 @@
 <mat-grid-list cols="3" rowHeight="2:1">
     <mat-grid-tile class="category" *ngFor="let category of categoriesList" (click)="onSelectCategory(category)">
-        <mat-card class="card-format">
-        <div>
-            <p class="title-category">{{category.title}}</p>
-        </div>
-        </mat-card>
+      <app-category-preview [category]="category"></app-category-preview>
     </mat-grid-tile>
 </mat-grid-list>

@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./subcategory-preview.component.css'],
 })
 export class SubcategoryPreviewComponent implements OnInit {
-  @Input() subcategory: any;
+  @Input() subCategory: any;
 
   constructor() {}
 

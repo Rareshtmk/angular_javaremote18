@@ -1,4 +1,4 @@
-import { ItemsService } from './../services/items.service';
+import { ItemsService } from '../products/items.service';
 import { Component, OnInit } from '@angular/core';
 import { subscribeOn } from 'rxjs/operators';
 import { CategoriesService } from '../categories/categories.service';
