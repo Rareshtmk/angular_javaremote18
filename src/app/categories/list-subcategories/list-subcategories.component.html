@@ -1,0 +1,10 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile class="category" *ngFor="let subCategory of subCategoriesList"
+        (click)="onSelectSubCategory(subCategory)">
+        <mat-card class="card-format">
+            <div>
+                <p class="title-category">{{subCategory?.title}}</p>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
