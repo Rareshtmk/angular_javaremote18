@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
         id: "2",
         icon: "category",
         title: "Categories",
-        route: "/home",
+        route: "/categories",
       },
       {
         id: "3",

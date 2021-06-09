@@ -1,4 +1,6 @@
 <div>
+    <div class="div-logo"><img class="img-logo" src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" /></div>
+
     <mat-card class="card-format">
         <div>
             <p>
@@ -6,7 +8,7 @@
             </p>
         </div>
     </mat-card>
-    <app-list-products [itemsList]="products"></app-list-products>
+    <app-list-products [itemsList]="products" (selectItemEvent)="onSelectProduct($event)"></app-list-products>
     <app-list-categories [categoriesList]="categories"></app-list-categories>
     <app-list-subcategories [subCategoriesList]="subcategories"></app-list-subcategories>
 </div>

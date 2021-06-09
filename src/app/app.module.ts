@@ -39,6 +39,8 @@ import { ListSubcategoriesComponent } from './categories/list-subcategories/list
 import { SubcategoryPreviewComponent } from './categories/subcategory-preview/subcategory-preview.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
 import { AddEditSubCategoriesComponent } from './dashboard/add-edit-sub-categories/add-edit-sub-categories.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -78,6 +80,7 @@ import { AddEditSubCategoriesComponent } from './dashboard/add-edit-sub-categori
     MatCardModule,
     MatGridListModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [
     {

@@ -12,3 +12,14 @@
 .input-item {
     margin-bottom: 6px;
 }
+
+.div-logo {
+    display: flex;
+}
+
+.img-logo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 60px;
+}

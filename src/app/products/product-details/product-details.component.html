@@ -1,1 +1,30 @@
-<p>product-details works!</p>
+<div>
+    <div class="div-logo"><img class="img-logo"
+            src="https://www.mbejda.com/content/images/2017/08/AngularJS-Shield.svg" /></div>
+    <div>
+        <p>Title:</p>
+        <p>{{product.title}}</p>
+    </div>
+    <div>
+        <p>Description:</p>
+        <p>{{product.description}}</p>
+    </div>
+    <div>
+        <p>Price:</p>
+        <p>{{product.price}}</p>
+    </div>
+    <div>
+        <p>Categories:</p>
+        <p>{{product.category.title}}</p>
+    </div>
+    <div>
+        <p>Subcategories:</p>
+        <p>{{product.subcategory.title}}</p>
+    </div>
+    <div>
+        <p>Data</p>
+        <p>{{product.title}}</p>
+    </div>
+    <button (click)="onCloseDialog()" mat-raised-button color="primary">Close</button>
+    
+</div>

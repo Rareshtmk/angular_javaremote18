@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { CategoriesService } from '../categories/categories.service';
 import { ItemsService } from '../products/items.service';
+import { ProductDetailsComponent } from '../products/product-details/product-details.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +14,7 @@ export class HomeComponent implements OnInit {
   categories: Array<any> = [];
   subcategories: Array<any> = [];
 
-  constructor(private itemsService: ItemsService, private categoriesService: CategoriesService) { }
+  constructor(private dialog: MatDialog, private itemsService: ItemsService, private categoriesService: CategoriesService) { }
 
   ngOnInit(): void {
     this.itemsService.getAllItems().subscribe((response: any) => {
@@ -31,6 +33,17 @@ export class HomeComponent implements OnInit {
       console.log('get sub categories from db');
       console.log(response);
       this.subcategories = response.result;
+    });
+  }
+  public onSelectProduct(product: any): void {
+    console.log("Homepage");
+    console.log(product);
+    let dialogRef = this.dialog.open(ProductDetailsComponent, {
+      data: {
+        product: product,
+      },
+      height: '400px',
+      width: '600px',
     });
   }
 
