@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CategoriesService } from '../categories/categories.service';
 import { ItemsService } from '../products/items.service';
 import { ProductDetailsComponent } from '../products/product-details/product-details.component';
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   categories: Array<any> = [];
   subcategories: Array<any> = [];
 
-  constructor(private dialog: MatDialog, private itemsService: ItemsService, private categoriesService: CategoriesService) { }
+  constructor( private dialog: MatDialog, private itemsService: ItemsService, private categoriesService: CategoriesService, ) { }
 
   ngOnInit(): void {
     this.itemsService.getAllItems().subscribe((response: any) => {

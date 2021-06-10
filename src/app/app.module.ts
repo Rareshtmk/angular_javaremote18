@@ -40,6 +40,10 @@ import { SubcategoryPreviewComponent } from './categories/subcategory-preview/su
 import { ListProductsComponent } from './products/list-products/list-products.component';
 import { AddEditSubCategoriesComponent } from './dashboard/add-edit-sub-categories/add-edit-sub-categories.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
+import { ProductDetailsComponentModule } from './products/product-details/product-details.module';
+import { ListUsersComponent } from './user/list-users/list-users.component';
 
 
 @NgModule({
@@ -61,7 +65,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     ListProductsComponent,
     AddEditSubCategoriesComponent,
     UserPreviewComponent,
+    ListUsersComponent,
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -70,6 +76,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AuthModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    CommonModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -81,6 +88,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatGridListModule,
     MatSelectModule,
     MatDialogModule,
+    ProductDetailsComponentModule,
   ],
   providers: [
     {

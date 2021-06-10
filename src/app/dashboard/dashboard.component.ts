@@ -2,6 +2,7 @@ import { ItemsService } from '../products/items.service';
 import { Component, OnInit } from '@angular/core';
 import { subscribeOn } from 'rxjs/operators';
 import { CategoriesService } from '../categories/categories.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,14 +13,17 @@ export class DashboardComponent implements OnInit {
   selectedItem: any;
   selectedCategory: any;
   selectedSubcategory: any;
+  selectedUser: any;
 
   items: Array<any> = [];
   categories: Array<any> = [];
   subcategories: Array<any> = [];
+  users: Array<any> = [];
 
   constructor(
     private itemsService: ItemsService,
-    private categoryService: CategoriesService
+    private categoryService: CategoriesService,
+    private userService: UserService,
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +44,12 @@ export class DashboardComponent implements OnInit {
       console.log(response);
       this.subcategories = response.result;
     });
+
+    this.userService.getAllUsers().subscribe((response: any)=>{
+      console.log('get users from db');
+      console.log(response);
+      this.users = response.result;
+    })
   }
   //products
   onReceiveItem(item: any): void {
@@ -72,6 +82,15 @@ export class DashboardComponent implements OnInit {
         console.log(this.subcategories);
         console.log(response);
       });
+  }
+
+  onReceiveUser(user: any): void{
+    console.log('onReceiveUser');
+    this.userService.createUser(user).subscribe((response:any) =>{
+      alert(response.message);
+      this.users.push(response.result);
+      
+    });
   }
 
   onEditItem(item: any): void {
@@ -115,6 +134,18 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  onEditUser(user: any): void{
+    console.log('onEditUser');
+    this.userService.updateUser(user).subscribe((response:any) =>{
+    for (let i = 0; i < this.users.length; i++){
+      if(this.users[i].id == user.id){
+        this.users[i] = response.result;
+      }
+    }
+    this.selectedUser = null;
+    });
+  }
+
   onDeleteItem(itemId: any): void {
     this.itemsService.deleteItemForever(itemId).subscribe((response: any) => {
       this.items = this.items.filter((item: any) => item.id != itemId);
@@ -143,12 +174,26 @@ export class DashboardComponent implements OnInit {
     this.categoryService
       .deleteSubCategoryForever(subCategoryId)
       .subscribe((response: any) => {
-        this.categories = this.subcategories.filter(
+        this.subcategories = this.subcategories.filter(
           (subCategory: any) => subCategoryId != subCategory.id
         );
         this.selectedSubcategory = null;
         console.log(response);
       });
+
+    
+  }
+
+  onDeleteUser(userId: any): void {
+    console.log('onDeleteUser');
+    console.log(userId);
+    this.userService.deleteUser(this.selectedUser.id).subscribe((response:any) =>{
+    this.users = this.users.filter(
+      (user:any) => userId != user.id
+    );
+    this.selectedUser = null;
+      
+    });
   }
 
   onSelectedItemFromList(item: any): void {
@@ -167,5 +212,12 @@ export class DashboardComponent implements OnInit {
     console.log('category from dashboard');
     console.log(subCategory);
     this.selectedSubcategory = subCategory;
+  }
+
+  onSelectedUserFromList(user: any): void{
+    console.log('user from dashboard');
+    console.log(user);
+    this.selectedUser = user;
+
   }
 }

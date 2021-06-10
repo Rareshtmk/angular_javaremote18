@@ -39,4 +39,13 @@ private user: UserModel | undefined;
   public updateUser(user: any): Observable<any> {
     return this.http.put("http://localhost:8080/users/update", user);
   }
+  public createUser(user: any): Observable<any> {
+    return this.http.post("http://localhost:8080/auth/register", user);
+  }
+  public deleteUser(userId: any): Observable<any> {
+    return this.http.delete("http://localhost:8080/users/delete/"+ userId);
+  }
+  public getAllUsers(): Observable<any> {
+    return this.http.get("http://localhost:8080/users")
+  }
 }

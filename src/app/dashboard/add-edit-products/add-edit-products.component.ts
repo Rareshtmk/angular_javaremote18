@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './add-edit-products.component.html',
   styleUrls: ['./add-edit-products.component.css'],
 })
-export class AddEditProductsComponent implements OnInit {
+export class AddEditProductsComponent implements OnInit, OnChanges {
   @Input() selectedItem: any;
   @Input() categoryList: Array<any> = [];
   @Input() subCategoryList: Array<any> = [];

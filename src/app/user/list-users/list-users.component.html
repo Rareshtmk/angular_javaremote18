@@ -1,0 +1,5 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+    <mat-grid-tile class="user" *ngFor="let user of usersList" (click)="onSelectUser(user)">
+        <app-user-preview [user]="user"></app-user-preview>
+    </mat-grid-tile>
+</mat-grid-list>

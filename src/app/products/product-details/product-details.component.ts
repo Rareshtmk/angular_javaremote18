@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-product-details',
@@ -7,10 +7,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  @Input() product: any;
-  constructor(private dialog: MatDialog) { }
+  product: any;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private dialog: MatDialog) {
+    this.product = data.product;
+   }
 
   ngOnInit(): void {
+    console.log("product details");
+    console.log(this.data.product);
   }
 
   onCloseDialog(): void{

@@ -6,10 +6,10 @@
     -My Account  --> OK
     -Admin(Admins Only)  --> 
     -Logout  --> OK
--HomePage
-    -Lista categorii  --> 
-    -Lista de produse  --> 
--Category pages / Dupa selectarea categoriei din Home pe aceasta pagina se vor lista toate elementele din acea categorie cu posibilitatea de filtrare dupa subcategorii
+-HomePage 
+    -Lista categorii  --> Ok
+    -Lista de produse  --> Ok
+-Category pages / Dupa selectarea categoriei din Home pe aceasta pagina se vor lista toate elementele din acea categorie cu posibilitatea de filtrare dupa subcategorii) --> Ok
     -Cats
         -Food
         -Toys
@@ -27,7 +27,7 @@
         -Toys
         -Accesories
 -Product details 
-    -Images
+    -Images --> Ok
     -Title  --> OK
     -Description  --> OK
     -Price  --> OK
