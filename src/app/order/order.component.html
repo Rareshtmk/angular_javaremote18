@@ -1,1 +1,9 @@
-<p>order works!</p>
+that's an order!
+
+<div *ngFor="let item of currentOrder"> {{item?.title}}</div>
+
+<br>
+
+<button (click)="placeOrder()" mat-raised-button color="primary">Place Order</button>
+
+<div *ngFor="let order of placedOrders"> {{order}}</div>

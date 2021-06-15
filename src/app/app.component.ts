@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
         id: "3",
         icon: "shopping_cart",
         title: "Order",
-        route: "/home",
+        route: "/order",
       },
       {
         id: "4",

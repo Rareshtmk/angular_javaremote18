@@ -22,39 +22,24 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void { }
 
   onLogin(): void {
-    this.userService.setUser({
-      accountNonExpired: true,
-      accountNonLocked: true,
-      authorities: [],
-      credentialsNonExpired: true,
-      email: "maxim@florin.com",
-      enabled: true,
-      firstName: "maxim",
-      id: 1,
-      lastName: "florin",
-      password: "$2a$10$vbDADkl1oAQoTKuggHTpm.S/47wIoI56FTlp5BZDmCk9Ff.GQq/um",
-      username: "maxim@florin.com",
-      token: "token"
-    })
-    this.router.navigate(["/", "dashboard"])
-    // console.log(this.loginForm.value);
-    // this.authService.login(this.loginForm.value).subscribe((response: any) => {
-    //   console.log(response);
+    console.log(this.loginForm.value);
+    this.authService.login(this.loginForm.value).subscribe((response: any) => {
+      console.log(response);
 
-    //   if (response.status == 200) {
-    //     let user = response.result.user;
-    //     user.token = response.result.token;
-    //     this.userService.setUser(user);
+      if (response.status == 200) {
+        let user = response.result.user;
+        user.token = response.result.token;
+        this.userService.setUser(user);
 
-    //     this.router.navigate(["/", "dashboard"])
-    //   } else {
-    //     alert(response.error);
-    //   }
+        this.router.navigate(["/", "dashboard"])
+      } else {
+        alert(response.error);
+      }
 
-    // }, (error) => {
-    //   console.log(error);
-    // }
-    // );
+    }, (error) => {
+      console.log(error);
+    }
+    );
 
   }
 }

@@ -5,7 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth/auth.guard';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { HomeComponent } from './home/home.component';
-import { CategoriesService } from './categories/categories.service';
+import { OrderComponent } from './order/order.component';
 import { CategoriesComponent } from './categories/categories.component';
 
 const routes: Routes = [
@@ -20,6 +20,9 @@ const routes: Routes = [
   },
   {
     path: "dashboard", canActivate: [AuthGuard], component: DashboardComponent,
+  },
+  {
+  path: "order", canActivate: [AuthGuard], component: OrderComponent,
   },
   {
     path: "my-account", canActivate: [AuthGuard], component: MyAccountComponent,
