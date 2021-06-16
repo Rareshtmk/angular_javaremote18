@@ -34,6 +34,7 @@ export class AddEditProductsComponent implements OnInit, OnChanges {
       id: [null],
       title: ['', Validators.minLength(4)],
       description: ['', Validators.minLength(10)],
+      imageUrl: ['', Validators.required],
       price: [
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),
@@ -55,6 +56,7 @@ export class AddEditProductsComponent implements OnInit, OnChanges {
         id: [this.selectedItem.id],
         title: [this.selectedItem.title, Validators.minLength(4)],
         description: [this.selectedItem.description, Validators.minLength(10)],
+        imageUrl: [this.selectedItem.imageUrl, Validators.required],
         price: [
           this.selectedItem.price,
           Validators.compose([Validators.min(1), Validators.max(10000)]),
@@ -73,6 +75,7 @@ export class AddEditProductsComponent implements OnInit, OnChanges {
       id: [null],
       title: ['', Validators.minLength(4)],
       description: ['', Validators.minLength(10)],
+      imageUrl: ['', Validators.required],
       price: [
         1,
         Validators.compose([Validators.min(1), Validators.max(10000)]),

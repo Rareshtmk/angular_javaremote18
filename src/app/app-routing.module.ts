@@ -11,9 +11,9 @@ import { CategoriesComponent } from './categories/categories.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: "/auth",
+    redirectTo: "",
     pathMatch: "full",
-   
+    component: HomeComponent,
   },
   {
     path: "auth", component: AuthComponent, 
@@ -28,11 +28,8 @@ const routes: Routes = [
     path: "my-account", canActivate: [AuthGuard], component: MyAccountComponent,
   },
   {
-    path: "home", component: HomeComponent,
-  },
-  {
     path: "categories", component: CategoriesComponent,
-  }
+  },
 ];
 
 @NgModule({

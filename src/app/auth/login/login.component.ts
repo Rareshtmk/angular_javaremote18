@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         user.token = response.result.token;
         this.userService.setUser(user);
 
-        this.router.navigate(["/", "dashboard"])
+        this.router.navigate([UserService.lastRoute])
       } else {
         alert(response.error);
       }

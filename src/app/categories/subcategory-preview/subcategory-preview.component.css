@@ -1,6 +1,7 @@
 .card-format {
     margin: 16px;
-    width: 100%;
+    padding: 16px;
+    display: flex;
 }
 
 .title-category {
@@ -9,6 +10,6 @@
     text-transform: capitalize;
 }
 
-.category {
+.sub-category {
     display: block;
 }

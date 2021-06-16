@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { environment } from 'src/environments/environment';
 import { CategoriesService } from '../categories/categories.service';
 import { ItemsService } from '../products/items.service';
 import { ProductDetailsComponent } from '../products/product-details/product-details.component';
@@ -13,8 +14,11 @@ export class HomeComponent implements OnInit {
   products: Array<any> = [];
   categories: Array<any> = [];
   subcategories: Array<any> = [];
+  description: string = "";
 
-  constructor( private dialog: MatDialog, private itemsService: ItemsService, private categoriesService: CategoriesService, ) { }
+  constructor( private dialog: MatDialog, private itemsService: ItemsService, private categoriesService: CategoriesService, ) {
+    this.description = environment.homeDescription;
+  }
 
   ngOnInit(): void {
     this.itemsService.getAllItems().subscribe((response: any) => {

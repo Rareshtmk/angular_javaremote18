@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { MatButtonModule } from "@angular/material/button";
 import { ProductDetailsComponent } from "./product-details.component";
 
 @NgModule({
@@ -10,7 +11,7 @@ import { ProductDetailsComponent } from "./product-details.component";
         ProductDetailsComponent,
     ],
     imports:[
-        CommonModule,
+        CommonModule, MatButtonModule,
     ]
 })
 export class ProductDetailsComponentModule{}

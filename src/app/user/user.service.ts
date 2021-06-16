@@ -8,6 +8,8 @@ import { UserModel } from './user.model';
   providedIn: 'root'
 })
 export class UserService {
+  public static lastRoute: string = "/";
+
 private user: UserModel | undefined;
   constructor(private router: Router, private http: HttpClient) { }
 
